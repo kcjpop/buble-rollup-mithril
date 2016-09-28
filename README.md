@@ -1,9 +1,13 @@
-An experimental boilerplate using Bublé, Rollup and Mithril
+An experimental boilerplate using Bublé, Rollup and Mithril Rewrite
 
-### Install
+### How to use?
+First install dependencies with `npm i`
 
-* `npm i`
-* `npm run build` to build
+* `npm run watch`
+* In another terminal, `npm run start`
 
-Then set your favourite static server to `/built`. There is already a
-`Caddyfile` for [Caddy](https://caddyserver.com/) included.
+Visit `http://127.0.0.1:8080/`
+
+### How to build?
+
+`npm run build`
