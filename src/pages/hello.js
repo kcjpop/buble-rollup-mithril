@@ -1,12 +1,5 @@
 import m from 'mithril'
 
-let c = {}
-c.controller = function (args) {
+const view = () => m('h1', 'Hello World')
 
-}
-
-c.view = function (ctrl, args) {
-  return m('h1', 'Hello World')
-}
-
-export default c
+export default {view}
