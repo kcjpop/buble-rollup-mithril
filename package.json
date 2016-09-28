@@ -5,10 +5,10 @@
   "description": "An experimental boilerplate using Bublé, Rollup and Mithril.",
   "main": "src/index.es6",
   "scripts": {
-    "build": "rollup -c | buble | uglifyjs > built/index.js",
+    "build": "rollup -c | buble | uglifyjs > public/built/index.js",
     "watch": "npm-scripts-watcher",
-    "build-dev": "rollup -c | buble > built/index.js",
-    "start": "http-server built"
+    "build-dev": "rollup -c | buble > public/built/index.js",
+    "start": "http-server public"
   },
   "watch": {
     "src/**/*.js": ["build-dev"]
