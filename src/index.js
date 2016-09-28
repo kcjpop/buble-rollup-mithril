@@ -1,4 +1,8 @@
 import m from 'mithril'
-import Hello from 'pages/hello.js'
+import Home from 'home/index'
+import Users from 'users/index'
 
-m.mount(document.body, Hello)
+m.route(document.body, '/', {
+  '/': Home,
+  '/users/:username': Users
+})
