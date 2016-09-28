@@ -8,7 +8,7 @@ const Layout = {
   }
 }
 
-const layoutize = subComponent => () => m(Layout, m(subComponent))
+const layoutize = subComponent => vnode => m(Layout, m(subComponent, vnode.attrs))
 
 m.route(document.body, '/', {
   '/': {render: layoutize(Home)},
