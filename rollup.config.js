@@ -1,7 +1,8 @@
-import commonjs from 'rollup-plugin-commonjs'
-import nodeResolve from 'rollup-plugin-node-resolve'
-import filesize from 'rollup-plugin-filesize'
 import buble from 'rollup-plugin-buble'
+import commonjs from 'rollup-plugin-commonjs'
+import filesize from 'rollup-plugin-filesize'
+import includePaths from 'rollup-plugin-includepaths'
+import nodeResolve from 'rollup-plugin-node-resolve'
 import uglify from 'rollup-plugin-uglify'
 import { minify } from 'uglify-js'
 
@@ -10,8 +11,15 @@ export default {
   format: 'cjs',
   plugins: [
     buble(),
-    nodeResolve({browser: true}),
-    commonjs({include: 'node_modules/**'})
+    includePaths({
+      paths: ['src']
+    }),
+    nodeResolve({
+      browser: true
+    }),
+    commonjs({
+      include: 'node_modules/**'
+    })
   ].concat(
     process.env.NODE_ENV === 'production'
     ? [
