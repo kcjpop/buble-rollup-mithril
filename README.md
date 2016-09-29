@@ -1,4 +1,4 @@
-An experimental boilerplate using Bublé, Rollup and Mithril Rewrite
+An experimental boilerplate using Bublé, Rollup, CSS Modules and Mithril Rewrite
 
 ### How to use?
 First install dependencies with `npm i`
