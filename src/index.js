@@ -1,4 +1,4 @@
 import m from 'mithril'
-import Hello from 'pages/hello.js'
+import Hello from 'hello/index'
 
 m.mount(document.body, Hello)
