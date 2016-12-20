@@ -3,7 +3,7 @@
   "repository": "https://github.com/kcjpop/buble-rollup-mithril",
   "version": "0.1.0",
   "description": "An experimental boilerplate using Bublé, Rollup and Mithril.",
-  "main": "src/index.es6",
+  "main": "src/index.js",
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
     "start": "NODE_ENV=dev rollup -c -w",
