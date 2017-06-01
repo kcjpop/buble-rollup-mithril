@@ -4,11 +4,11 @@ import filesize from 'rollup-plugin-filesize'
 import includePaths from 'rollup-plugin-includepaths'
 import nodeResolve from 'rollup-plugin-node-resolve'
 import postcss from 'rollup-plugin-postcss'
-import postcssModules from 'postcss-modules'
+import cssnext from 'postcss-cssnext'
+import assets from 'postcss-assets'
+import cssnano from 'cssnano'
 import uglify from 'rollup-plugin-uglify'
 import { minify } from 'uglify-js'
-
-const cssExportMap = {}
 
 export default {
   entry: 'src/index.js',
@@ -24,16 +24,14 @@ export default {
       include: 'node_modules/**'
     }),
     postcss({
+      extensions: [ '.css' ],
+      sourceMap: true, // true, "inline" or false
+      extract : 'public/built/style.css',
       plugins: [
-        postcssModules({
-          getJSON (id, exportTokens) {
-            cssExportMap[id] = exportTokens
-          }
-        })
-      ],
-      getExport (id) {
-        return cssExportMap[id]
-      }
+        cssnext(),
+        assets()
+        // cssnano({ preset: 'default' })
+      ]
     }),
     buble()
   ].concat(
